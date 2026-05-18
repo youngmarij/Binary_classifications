@@ -45,5 +45,4 @@ w = np.dot(pt, np.linalg.inv(xxt))
 
 **4. Построение разделяющей линии**
 Из уравнения w₀·x₁ + w₁·x₂ + w₂ = 0 выражаем x₂:
-```python
-line_y = [-x*w[0]/w[1] - w[2]/w[1] for x in line_x]```
+line_y = [-x*w[0]/w[1] - w[2]/w[1] for x in line_x]
