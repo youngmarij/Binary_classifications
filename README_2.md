@@ -25,26 +25,22 @@
 ### Расширенная матрица признаков
 В код добавляется столбец единиц для учёта свободного члена (bias):
 ```python
-x_train = np.hstack((x_train, np.ones((len(x_train), 1))))```
+x_train = np.hstack((x_train, np.ones((len(x_train), 1))))
 
 **⚙️ Алгоритм шаг за шагом**
 **1. Подготовка данных**
-```python
-x_train = np.hstack((x_train, np.ones((len(x_train), 1))))```
+x_train = np.hstack((x_train, np.ones((len(x_train), 1))))
 Добавляем столбец единиц для учёта свободного члена.
 
 **2. Вычисление вспомогательных сумм**
-```python
-pt = np.sum([x*y for x,y in zip(x_train, y_train)], axis=0)```
+pt = np.sum([x*y for x,y in zip(x_train, y_train)], axis=0)
 Вычисляем Xᵀ·y — сумму произведений признаков на метки.
 
-```python
-xxt = np.sum([np.outer(x, x) for x in x_train], axis=0)```
+xxt = np.sum([np.outer(x, x) for x in x_train], axis=0)
 Вычисляем Xᵀ·X — сумму внешних произведений векторов признаков.
 
 **3. Решение системы**
-```python
-w = np.dot(pt, np.linalg.inv(xxt))```
+w = np.dot(pt, np.linalg.inv(xxt))
 Находим веса через обратную матрицу: w = (XᵀX)⁻¹ · (Xᵀy)
 
 **4. Построение разделяющей линии**
